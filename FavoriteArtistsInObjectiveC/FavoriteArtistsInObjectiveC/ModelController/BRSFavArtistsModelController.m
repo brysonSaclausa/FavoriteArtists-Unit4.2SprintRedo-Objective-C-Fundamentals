@@ -7,9 +7,9 @@
 
 #import "BRSFavArtistsModelController.h"
 
-//'private interface/private class extension' allows us to do a little extra that is hidden from the public interface
+
 @interface BRSFavArtistsModelController () {
-//instance variable that is the underlying data that properies use
+
     NSMutableArray *_internalArtists;
 }
 
@@ -17,4 +17,17 @@
 
 @implementation BRSFavArtistsModelController
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _internalArtists = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+
+- (NSArray<BRSArtist *> *)artistArray
+{
+    return _internalArtists.copy;
+}
 @end
