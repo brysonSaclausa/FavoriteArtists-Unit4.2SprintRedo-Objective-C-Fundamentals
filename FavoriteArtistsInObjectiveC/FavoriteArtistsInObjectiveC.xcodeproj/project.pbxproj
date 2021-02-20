@@ -14,7 +14,7 @@
 		7C16036625DF628400164168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C16036425DF628400164168 /* LaunchScreen.storyboard */; };
 		7C16036925DF628400164168 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C16036825DF628400164168 /* main.m */; };
 		7C16038425E0B09800164168 /* BRSArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C16038325E0B09800164168 /* BRSArtist.m */; };
-		7C16038A25E0B12B00164168 /* BRSFavArtistsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C16038925E0B12B00164168 /* BRSFavArtistsController.m */; };
+		7C16038A25E0B12B00164168 /* BRSFavArtistsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C16038925E0B12B00164168 /* BRSFavArtistsModelController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		7C16036825DF628400164168 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7C16038225E0B09800164168 /* BRSArtist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRSArtist.h; sourceTree = "<group>"; };
 		7C16038325E0B09800164168 /* BRSArtist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSArtist.m; sourceTree = "<group>"; };
-		7C16038825E0B12B00164168 /* BRSFavArtistsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRSFavArtistsController.h; sourceTree = "<group>"; };
-		7C16038925E0B12B00164168 /* BRSFavArtistsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSFavArtistsController.m; sourceTree = "<group>"; };
+		7C16038825E0B12B00164168 /* BRSFavArtistsModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRSFavArtistsModelController.h; sourceTree = "<group>"; };
+		7C16038925E0B12B00164168 /* BRSFavArtistsModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSFavArtistsModelController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,16 +69,32 @@
 				7C16035925DF628200164168 /* SceneDelegate.h */,
 				7C16035A25DF628200164168 /* SceneDelegate.m */,
 				7C16035F25DF628200164168 /* Main.storyboard */,
-				7C16038225E0B09800164168 /* BRSArtist.h */,
-				7C16038325E0B09800164168 /* BRSArtist.m */,
-				7C16038825E0B12B00164168 /* BRSFavArtistsController.h */,
-				7C16038925E0B12B00164168 /* BRSFavArtistsController.m */,
+				7C16039125E0CE6800164168 /* Model */,
+				7C16038E25E0CE5900164168 /* ModelController */,
 				7C16036225DF628400164168 /* Assets.xcassets */,
 				7C16036425DF628400164168 /* LaunchScreen.storyboard */,
 				7C16036725DF628400164168 /* Info.plist */,
 				7C16036825DF628400164168 /* main.m */,
 			);
 			path = FavoriteArtistsInObjectiveC;
+			sourceTree = "<group>";
+		};
+		7C16038E25E0CE5900164168 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				7C16038825E0B12B00164168 /* BRSFavArtistsModelController.h */,
+				7C16038925E0B12B00164168 /* BRSFavArtistsModelController.m */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		7C16039125E0CE6800164168 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C16038225E0B09800164168 /* BRSArtist.h */,
+				7C16038325E0B09800164168 /* BRSArtist.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +170,7 @@
 				7C16036925DF628400164168 /* main.m in Sources */,
 				7C16038425E0B09800164168 /* BRSArtist.m in Sources */,
 				7C16035B25DF628200164168 /* SceneDelegate.m in Sources */,
-				7C16038A25E0B12B00164168 /* BRSFavArtistsController.m in Sources */,
+				7C16038A25E0B12B00164168 /* BRSFavArtistsModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class BRSArtist;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BRSFavArtistsController : NSObject
+@interface BRSFavArtistsModelController : NSObject
+
+@property (nonatomic, readonly, copy) NSArray<BRSArtist *> *artistArray;
 
 @end
 

@@ -5,8 +5,8 @@
 //  Created by BrysonSaclausa on 2/19/21.
 //
 
-#import "BRSFavArtistsController.h"
+#import "BRSFavArtistsModelController.h"
 
-@implementation BRSFavArtistsController
+@implementation BRSFavArtistsModelController
 
 @end
