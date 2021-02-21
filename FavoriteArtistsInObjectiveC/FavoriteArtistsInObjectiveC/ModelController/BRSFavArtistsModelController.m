@@ -6,6 +6,7 @@
 //
 
 #import "BRSFavArtistsModelController.h"
+#import "BRSArtist.h"
 
 
 @interface BRSFavArtistsModelController () {
@@ -21,10 +22,13 @@
 {
     if (self = [super init]) {
         _internalArtists = [[NSMutableArray alloc] init];
+    
     }
     return self;
 }
 
+
+#pragma mark - Convenience Accessors
 
 - (NSArray<BRSArtist *> *)artistArray
 {
