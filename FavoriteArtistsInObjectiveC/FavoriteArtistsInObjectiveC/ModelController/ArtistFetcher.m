@@ -22,7 +22,7 @@ static NSString *const ArtistFetcherBaseURLString = @"https://www.theaudiodb.com
     NSLog(@"Fetching artists: %@", url);
     
     
-    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         <#code#>
     }] resume];
 }
