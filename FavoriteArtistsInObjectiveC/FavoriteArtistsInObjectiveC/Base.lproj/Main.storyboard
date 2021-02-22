@@ -11,7 +11,7 @@
         <!--Favorite Artists-->
         <scene sceneID="BUk-EC-pdn">
             <objects>
-                <tableViewController id="3Qk-xS-rHF" sceneMemberID="viewController">
+                <tableViewController id="3Qk-xS-rHF" customClass="BRSFavArtistTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r43-1W-E6K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,6 +40,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Apv-QD-apq" kind="show" id="Ksx-qN-A0B"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -149,6 +152,9 @@
             <point key="canvasLocation" x="479.71014492753625" y="40.848214285714285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kvQ-kO-OT9"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
