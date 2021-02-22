@@ -14,7 +14,12 @@ static NSString *const ArtistFetcherBaseURLString = @"https://www.theaudiodb.com
 
 - (void)fetchArtistWithName:(NSString *)artistName completionHandler:(ArtistFetcherCompletionHandler)completionHandler
 {
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString: ArtistFetcherBaseURLString];
     
+    urlComponents.queryItems = @[ [NSURLQueryItem queryItemWithName:@"" value:artistName] ];
+    
+    NSURL *url = urlComponents.URL;
+    NSLog(@"Fetching artists: %@", url);
 }
 
 @end
