@@ -20,6 +20,13 @@ static NSString *const ArtistFetcherBaseURLString = @"https://www.theaudiodb.com
     
     NSURL *url = urlComponents.URL;
     NSLog(@"Fetching artists: %@", url);
+    
+    NSURLSessionDataTask *dataTask = [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        <#code#>
+    }];
+    [dataTask resume];
 }
+
+    
 
 @end
