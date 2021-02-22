@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BRSArtist (JSONSerialization)
 
+- (nullable instancetype)initWithDictionary:(NSDictionary *)aDictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

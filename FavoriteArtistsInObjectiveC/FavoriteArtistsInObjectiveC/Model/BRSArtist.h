@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
                          artistBio:(NSString *)aBio
                         yearFormed:(int)aYear NS_DESIGNATED_INITIALIZER;
 
-- (nullable instancetype)initWithDictionary:(NSDictionary *)aDictionary;
+
 
 
 
