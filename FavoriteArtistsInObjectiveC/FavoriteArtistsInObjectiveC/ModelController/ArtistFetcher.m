@@ -23,7 +23,24 @@ static NSString *const ArtistFetcherBaseURLString = @"https://www.theaudiodb.com
     
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        <#code#>
+        if (error) {
+            NSLog(@"Error fetching artist: %@", error);
+            
+            return;
+            
+        }
+        
+        NSError *jsonError;
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                                   options:0
+                                                                     error:&jsonError];
+        if (!dictionary) {
+            NSLog(@"Error decoding JSON: %@", jsonError);
+            
+            return;
+            
+        }
+            
     }] resume];
 }
 
