@@ -31,6 +31,16 @@
     self.artistFetcher = [[ArtistFetcher alloc] init];
 }
 
+- (void) updateViews
+{
+    self.nameLabel.text = self.artist.artistName;
+    self.bioTextView.text = self.artist.artistBio;
+    NSString *yearFormedString = [NSString stringWithFormat:@"Year formed %d", self.artist.yearFormed];
+    self.yearLabel.text = yearFormedString;
+    
+    
+}
+
 - (IBAction)didTapSaveButton:(id)sender
 {
     
@@ -64,6 +74,8 @@
         if (artists.count > 0) {
             self.artist = artists[0];
         }
+        
+        [self updateViews];
     }];
     
 
