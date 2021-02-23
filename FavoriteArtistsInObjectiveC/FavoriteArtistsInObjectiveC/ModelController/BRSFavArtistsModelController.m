@@ -7,10 +7,12 @@
 
 #import "BRSFavArtistsModelController.h"
 #import "BRSArtist.h"
+#import "BRSArtist+JSONSerialization.h"
+
+
 
 
 @interface BRSFavArtistsModelController () {
-
     NSMutableArray *_internalArtists;
 }
 
@@ -22,7 +24,7 @@
 {
     if (self = [super init]) {
         _internalArtists = [[NSMutableArray alloc] init];
-    
+        
     }
     return self;
 }
@@ -34,4 +36,10 @@
 {
     return _internalArtists.copy;
 }
+
+- (void)addArtist:(BRSArtist *)artist;
+{
+    [_internalArtists addObject:artist];
+}
+
 @end

@@ -6,9 +6,13 @@
 //
 
 #import "SearchDetailViewController.h"
+#import "ArtistFetcher.h"
+#import "BRSArtist.h"
+#import "BRSFavArtistsModelController.h"
 
 @interface SearchDetailViewController ()
 
+@property ArtistFetcher *artistFetcher;
 // Private IBOutlets
 @property (nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property (nonatomic) IBOutlet UISearchBar *searchBar;
@@ -24,7 +28,7 @@
     [super viewDidLoad];
     self.searchBar.delegate = self;
     
-    self.nameLabel.text = @"testing";
+    self.artistFetcher = [[ArtistFetcher alloc] init];
 }
 
 - (IBAction)didTapSaveButton:(id)sender
@@ -41,5 +45,28 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+@end
+
+@implementation SearchDetailViewController(UISearchBarDelegate)
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSString *searchTerm = searchBar.text;
+    if ((searchTerm == nil) | [searchTerm isEqualToString:@""]) return;
+    
+    NSLog(@"Searching for %@", searchTerm);
+    
+    [self.artistFetcher fetchArtistWithName:searchTerm completionHandler:^(NSArray * _Nullable artists, NSError * _Nullable error)
+    {
+        NSLog(@"Found %ld results!", artists.count);
+        
+        if (artists.count > 0) {
+            self.artist = artists[0];
+        }
+    }];
+    
+
+}
 
 @end

@@ -6,9 +6,13 @@
 //
 
 #import "BRSFavArtistTableViewController.h"
+#import "BRSArtist.h"
+#import "BRSFavArtistsModelController.h"
+
 
 @interface BRSFavArtistTableViewController ()
 
+@property BRSFavArtistsModelController *artistModelController;
 
 @end
 
@@ -19,6 +23,7 @@
     
     
 }
+
 
 #pragma mark - Table view data source
 

@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly, copy) NSArray<BRSArtist *> *artistArray;
 
+- (void)addArtist:(BRSArtist *)artist;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,6 +7,7 @@
 
 #import "ArtistFetcher.h"
 #import "BRSArtist.h"
+#import "ArtistsResults.h"
 
 static NSString *const ArtistFetcherBaseURLString = @"https://www.theaudiodb.com/api/v1/json/1/search.php?";
 
@@ -16,7 +17,7 @@ static NSString *const ArtistFetcherBaseURLString = @"https://www.theaudiodb.com
 {
     NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString: ArtistFetcherBaseURLString];
     
-    urlComponents.queryItems = @[ [NSURLQueryItem queryItemWithName:@"" value:artistName] ];
+    urlComponents.queryItems = @[ [NSURLQueryItem queryItemWithName:@"s" value:artistName] ];
     
     NSURL *url = urlComponents.URL;
     NSLog(@"Fetching artists: %@", url);
@@ -44,8 +45,22 @@ static NSString *const ArtistFetcherBaseURLString = @"https://www.theaudiodb.com
             });
             
             return;
-            
         }
+        
+        ArtistsResults *results = [[ArtistsResults alloc]initWithDictionary:dictionary];
+        if (!results) {
+            NSError *error = [NSError errorWithDomain:@"ArtistFetcherDomain" code:-1 userInfo:nil];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(results.artists, nil);
+        });
+        
             
     }] resume];
 }
