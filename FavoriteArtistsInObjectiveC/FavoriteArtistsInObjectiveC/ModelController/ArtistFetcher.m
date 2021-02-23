@@ -26,7 +26,9 @@ static NSString *const ArtistFetcherBaseURLString = @"https://www.theaudiodb.com
         if (error) {
             NSLog(@"Error fetching artist: %@", error);
             
-            return;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
             
         }
         
@@ -36,6 +38,10 @@ static NSString *const ArtistFetcherBaseURLString = @"https://www.theaudiodb.com
                                                                      error:&jsonError];
         if (!dictionary) {
             NSLog(@"Error decoding JSON: %@", jsonError);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, jsonError);
+            });
             
             return;
             
