@@ -43,7 +43,9 @@
 
 - (IBAction)didTapSaveButton:(id)sender
 {
-    
+    if (self.artist == nil) return;
+    [self.artistModelController addArtist:self.artist];
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 

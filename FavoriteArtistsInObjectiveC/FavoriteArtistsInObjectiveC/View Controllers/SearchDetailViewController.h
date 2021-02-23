@@ -8,11 +8,15 @@
 #import <UIKit/UIKit.h>
 #import "BRSArtist.h"
 
+@class Artist;
+@class BRSFavArtistsModelController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchDetailViewController : UIViewController <UISearchBarDelegate>
 
 @property (nonatomic, nullable) BRSArtist *artist;
+@property (nonatomic, nullable) BRSFavArtistsModelController *artistModelController;
 
 @end
 

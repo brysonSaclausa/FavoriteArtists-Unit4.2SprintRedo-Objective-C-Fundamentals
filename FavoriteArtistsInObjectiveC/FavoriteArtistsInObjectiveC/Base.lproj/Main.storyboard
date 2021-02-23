@@ -41,7 +41,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Apv-QD-apq" kind="show" id="Ksx-qN-A0B"/>
+                                    <segue destination="Apv-QD-apq" kind="show" identifier="artistDetailSegue" id="Ksx-qN-A0B"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,7 +53,7 @@
                     <navigationItem key="navigationItem" title="Favorite Artists" id="zqw-VG-8tj">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ga6-Ys-rY5">
                             <connections>
-                                <segue destination="Apv-QD-apq" kind="show" id="kvQ-kO-OT9"/>
+                                <segue destination="Apv-QD-apq" kind="show" identifier="addArtistSegue" id="kvQ-kO-OT9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -153,7 +153,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kvQ-kO-OT9"/>
+        <segue reference="Ksx-qN-A0B"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
