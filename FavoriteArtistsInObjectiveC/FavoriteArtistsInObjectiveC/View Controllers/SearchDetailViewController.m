@@ -29,18 +29,21 @@
     self.searchBar.delegate = self;
     self.artistFetcher = [[ArtistFetcher alloc] init];
     
-//    self.nameLabel.text = nil;
-//    self.bioTextView.text = nil;
-//    self.yearLabel.text = nil;
+    [self updateViews];
 }
 
 - (void) updateViews
 {
+    if (self.artist != nil) {
     self.nameLabel.text = self.artist.artistName;
     self.bioTextView.text = self.artist.artistBio;
     NSString *yearFormedString = [NSString stringWithFormat:@"Year formed %d", self.artist.yearFormed];
     self.yearLabel.text = yearFormedString;
-    
+    } else {
+        self.nameLabel.text = nil;
+        self.bioTextView.text = nil;
+        self.yearLabel.text = nil;
+    }
     
 }
 
