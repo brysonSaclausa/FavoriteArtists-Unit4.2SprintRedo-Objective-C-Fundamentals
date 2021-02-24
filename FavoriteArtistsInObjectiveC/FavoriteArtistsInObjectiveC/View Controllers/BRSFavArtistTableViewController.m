@@ -60,10 +60,17 @@
     if ([[segue identifier] isEqualToString:@"addArtistSegue"]) {
         SearchDetailViewController *addArtistVC = [segue destinationViewController];
         addArtistVC.artistModelController = self.artistModelController;
+    } else {
+        if ([[segue identifier] isEqualToString:@"artistDetailSegue"]) {
+            SearchDetailViewController *artistDetailVC = [segue destinationViewController];
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            BRSArtist *artist = [self.artistModelController.artistArray objectAtIndex:indexPath.row];
+            
+            artistDetailVC.artist = artist;
+        }
     }
     
 }
-//@"addArtistSegue"
-//@"artistDetailSegue"
+
 
 @end
