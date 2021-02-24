@@ -9,10 +9,10 @@
 
 @implementation BRSArtist
 
-- (instancetype)init
-{
-    return [self initWithArtistName:@"" artistBio:@"" yearFormed:0];
-}
+//- (instancetype)init
+//{
+//    return [self initWithArtistName:@"" artistBio:@"" yearFormed:0];
+//}
 
 - (instancetype)initWithArtistName:(NSString *)aName
                          artistBio:(NSString *)aBio

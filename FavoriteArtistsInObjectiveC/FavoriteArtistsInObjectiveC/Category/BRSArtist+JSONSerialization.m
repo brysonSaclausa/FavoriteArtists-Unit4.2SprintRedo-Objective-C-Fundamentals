@@ -6,6 +6,7 @@
 //
 
 #import "BRSArtist+JSONSerialization.h"
+#import "BRSArtist.h"
 
 @implementation BRSArtist (JSONSerialization)
 
@@ -15,21 +16,17 @@
     if (![artistName isKindOfClass:NSString.class]) return nil;
     
     NSNumber *yearFormed = [dictionary objectForKey:@"intFormedYear"];
-    if ([yearFormed isKindOfClass:[NSNull class]]) {
-        yearFormed = nil;
-    } else if ([yearFormed isKindOfClass:[NSString class]]) {
-        NSString *yearFormedString = [dictionary objectForKey:@"intFormedYear"];
-        yearFormed = @([yearFormedString intValue]);
-    } else if (![yearFormed isKindOfClass:[NSNumber class]]) return nil;
+    if ([yearFormed isKindOfClass:NSNull.class])
+    {
+        yearFormed = 0;
+    }
     
     NSString *artistBio = [dictionary objectForKey:@"strBiographyEN"];
-    if ([artistBio isKindOfClass:[NSNull class]]){
-        artistBio = nil;
-    } else if (![artistBio isKindOfClass:NSString.class]) return nil;
+    if (![artistBio isKindOfClass:NSString.class]) return nil;
     
     return [self initWithArtistName:artistName
                           artistBio:artistBio
-                         yearFormed:yearFormed];
+                         yearFormed:yearFormed.intValue];
 }
 
 - (NSDictionary *)toDictionary;

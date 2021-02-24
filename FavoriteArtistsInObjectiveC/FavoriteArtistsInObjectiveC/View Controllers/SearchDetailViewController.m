@@ -27,8 +27,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.searchBar.delegate = self;
-    
     self.artistFetcher = [[ArtistFetcher alloc] init];
+    
+//    self.nameLabel.text = nil;
+//    self.bioTextView.text = nil;
+//    self.yearLabel.text = nil;
 }
 
 - (void) updateViews

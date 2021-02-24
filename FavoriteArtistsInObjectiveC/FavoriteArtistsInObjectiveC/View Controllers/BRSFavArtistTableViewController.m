@@ -46,8 +46,8 @@
     
     BRSArtist *artist = [self.artistModelController.artistArray objectAtIndex:indexPath.row];
     cell.textLabel.text = artist.artistName;
-    cell.detailTextLabel.text = @"hello";
-
+    NSString *yearFormedString = [NSString stringWithFormat:@"Year formed %d", artist.yearFormed];
+    cell.detailTextLabel.text = yearFormedString;
     
     return cell;
 }
